@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd ${0%/*} 2>/dev/null
 echo $PWD/${0##*/}
 

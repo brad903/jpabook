@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ch02-jpa-start1/clean.sh
 ch04-jpa-start2/clean.sh
 ch04-model1/clean.sh
