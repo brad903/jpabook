@@ -11,7 +11,7 @@ public class Player {
 
     private String userName;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -55,5 +55,13 @@ public class Player {
                 ", userName='" + userName + '\'' +
                 ", team=" + team +
                 '}';
+    }
+
+    public boolean hasTeam() {
+        return team != null;
+    }
+
+    public void remove() {
+        team.remove(this);
     }
 }

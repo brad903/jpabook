@@ -16,6 +16,9 @@ public class Team {
     @OneToMany(mappedBy = "team")
     private List<Player> players = new ArrayList<Player>();
 
+    public Team() {
+    }
+
     public Team(String id, String name) {
         this.id = id;
         this.name = name;
@@ -55,7 +58,14 @@ public class Team {
     }
 
     public void add(Player player) {
+        if(player.hasTeam()) {
+            player.remove();
+        }
         this.players.add(player);
         player.setTeam(this);
+    }
+
+    public void remove(Player player) {
+        players.remove(player);
     }
 }
