@@ -45,7 +45,11 @@ public class Player {
     }
 
     public void setTeam(Team team) {
+        if(this.team != null) {
+            this.team.remove(this);
+        }
         this.team = team;
+        team.add(this);
     }
 
     @Override
@@ -55,13 +59,5 @@ public class Player {
                 ", userName='" + userName + '\'' +
                 ", team=" + team +
                 '}';
-    }
-
-    public boolean hasTeam() {
-        return team != null;
-    }
-
-    public void remove() {
-        team.remove(this);
     }
 }

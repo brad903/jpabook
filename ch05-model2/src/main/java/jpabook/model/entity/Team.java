@@ -58,14 +58,10 @@ public class Team {
     }
 
     public void add(Player player) {
-        if(player.hasTeam()) {
-            player.remove();
-        }
         this.players.add(player);
-        player.setTeam(this);
     }
 
     public void remove(Player player) {
-        players.remove(player);
+        this.players.remove(player);
     }
 }
